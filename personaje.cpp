@@ -17,7 +17,7 @@ int nivel = 1;
 
 // Función para verificar si el personaje está vivo
 string personajevivo(int vidaActual) {
-    if (vidaActual > 0) {
+    if (vidaActual >= 0) {
         return "si";
     } else {
         return "no";
@@ -33,6 +33,20 @@ string llaveenmano(bool poseeLlave) {
     }
 }
 
+string accesoArea51(int nivel, bool llave)
+{ 
+    string respuesta = "";
+    if (nivel >= 5 && llave == true)
+    {
+        respuesta = "Ha ingresado al Area 51!";
+    }
+    else
+    {
+        respuesta = "Los secretos del Area 51 siguen ocultos para Ud.";
+    } 
+    return respuesta;
+}
+
 int main() {
     cout << endl;
     cout << "ficha tecnica:" << endl;
@@ -46,11 +60,12 @@ int main() {
     
         cout << "tratando de entrar al area 51..." << endl;
     cout << "el nivel requerido es 5 y se necesita una llave" << endl;
-
-     if (nivel >= 5 && tieneLlave == true)
-     {
-         cout << "ha ingresado al area 51" << end1;
-        }else{
+    
+    if (nivel >= 5 && tieneLlave == true) {
+            cout << "ha ingresado al area 51" << endl;
+    }
+        
+    else {
          cout << "los secretos del area 51 siguen ocultos para Ud" << endl;
         }
 
@@ -60,19 +75,19 @@ int main() {
     cout << "por haber encontrado la llave, has subido 4 niveles" << endl;
 
     nivel = nivel + 4;
-     if (nivel >= 5 && tieneLlave == true)
-     {
-
+    
+        if (nivel >= 5 && tieneLlave == true)
+        {
             cout << "tratando de entrar al area 51..." << endl;
     cout << "el nivel requerido es 5 y se necesita una llave" << endl;
-
+        }
+    
      if (nivel >= 5 && tieneLlave == true)
-     {
-         cout << "ha ingresado al area 51" << end1;
+     { cout << "ha ingresado al area 51" << endl;
         }else{
          cout << "los secretos del area 51 siguen ocultos para Ud" << endl;
         }
-     }
+    
     cout << endl;
     cout << "ficha tecnica:" << endl;
     cout << "mi personaje: " << nombre << endl;
